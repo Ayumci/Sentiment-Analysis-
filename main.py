@@ -63,8 +63,8 @@ plot_model(model, show_shapes=True)
 
 
 # Train the Model
-epochs = 10
-batch_size = 16
+epochs = 10000
+batch_size = 8
 history = model.fit(X_train_pad, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.2, )
 
 
