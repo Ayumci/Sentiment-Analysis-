@@ -1,3 +1,4 @@
+# Imports
 import comet_ml
 from comet_ml import Experiment
 import pandas as pd
@@ -9,18 +10,25 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.models import Sequential
 from keras.layers import Embedding, LSTM, Dense, Dropout
 from keras.utils import to_categorical
-from keras.callbacks import EarlyStopping
 from keras.utils import plot_model
 import matplotlib.pyplot as plt
 import seaborn as sns
+from keras.optimizers import RMSprop
+
+
+
+# setting up comet
 experiment = comet_ml.Experiment(
     api_key="Btyq9WqX6zq5ERVHuOMKKsopK",
     project_name="testing"
 )
-TRAIN_DIR = "train.csv"
-TEST_DIR = "test.csv"
-train_df = pd.read_csv(TRAIN_DIR)
-test_df = pd.read_csv(TEST_DIR)
+
+# Training and testing datasheet directory 
+TRAIN_DATASHEET_DIR = "train.csv"
+TEST_DATASHEET_DIR = "test.csv"
+
+train_df = pd.read_csv(TRAIN_DATASHEET_DIR)
+test_df = pd.read_csv(TEST_DATASHEET_DIR)
 train_df.head(5)
 labelencode = LabelEncoder()
 train_df['sentiment_encoded'] = labelencode.fit_transform(train_df['sentiment'])
@@ -48,5 +56,3 @@ plot_model(model, show_shapes=True)
 epochs = 10
 batch_size = 512
 history = model.fit(X_train_pad, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.2, )
-
-
