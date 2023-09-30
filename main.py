@@ -19,8 +19,8 @@ from keras.optimizers import RMSprop
 
 # setting up comet
 experiment = comet_ml.Experiment(
-    api_key="Btyq9WqX6zq5ERVHuOMKKsopK",
-    project_name="testing"
+    api_key="API KEY",
+    project_name="PROJECT NAME"
 )
 
 # Training and testing datasheet directory 
