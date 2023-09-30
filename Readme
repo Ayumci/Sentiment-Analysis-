@@ -1,1 +1,4 @@
-
+This is a sentiment analysis bot.
+Basically, it takes random tet preferably a comment then classes it into 2 categories - negative and positive.
+In this git, I used the IMBD movie reviews.
+https://www.comet.com/ was used for logging.
