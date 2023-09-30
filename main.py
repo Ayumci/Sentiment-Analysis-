@@ -53,6 +53,6 @@ model.add(Dense(2, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.summary()
 plot_model(model, show_shapes=True)
-epochs = 10
-batch_size = 512
-history = model.fit(X_train_pad, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.2, )
+epoes = 10
+batch = 512
+history = model.fit(X_train_pad, y_train, epochs=epoes, batch_size=batch, validation_split=0.2, )
